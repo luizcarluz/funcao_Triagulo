@@ -7,7 +7,7 @@ class Triangulo:
         self.b = b
         self.c = c
         
-    def verifica_triangulo(self):
+    def verifica_triangulo(self): # condição de existencia
         if self.a + self.b > self.c and self.b + self.c > self.a \
            and self.c + self.a > self.b:# Verifica se é um triangulo
             return True
@@ -15,10 +15,10 @@ class Triangulo:
             return False
 
 
-    def perimetro_triangulo(self):
+    def perimetro_triangulo(self): # retorna o perimetro
         return (self.a + self.b + self.c)
     
-    def triangulo_retangulo(self):        
+    def triangulo_retangulo(self): # verifica se é triangulo retangulo    
         
         if self.c > self.a and self.c > self.b and self.c ** 2 == self.a ** 2 + self.b ** 2:
             return True
@@ -26,7 +26,7 @@ class Triangulo:
             return True
     
 
-    def tipo_lado(self):
+    def tipo_lado(self): # verifica tipo do triangulo
         if (self.a == self.b) and (self.b == self.c):
             return "equilátero"
         elif (self.a == self.b) or (self.b == self.c) or (self.a == self.c):
@@ -39,7 +39,7 @@ class Triangulo:
                 return "Escaleno"
         
     
-    def area_triangulo(self):
+    def area_triangulo(self): # Usa formula de heron para a area
         import math
         p = (self.a + self.b + self.c)/2
         x = p*(p - self.a)*(p - self.b)*(p - self.c)
